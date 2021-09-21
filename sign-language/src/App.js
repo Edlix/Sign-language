@@ -3,18 +3,23 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Redirectx,
+  //Redirectx,
 }
-from "react-router-dom"
+from "react-router-dom";
 import LoginPage from './components/LoginPage/LoginPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import TranslationPage from './components/TranslationPage/TranslationPage';
+import AppContainer from './hoc/AppContainer';
 
+//USE THIS API:
+//https://vue-questionaire.herokuapp.com/translations
 function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <h1>React sign language</h1>
+      <AppContainer> 
+        <h1>React sign language</h1>
+      </AppContainer>
       <Switch>
         <Route path="/login" exact component={LoginPage}/>
         <Route path="/translation" exact component={TranslationPage}/>
