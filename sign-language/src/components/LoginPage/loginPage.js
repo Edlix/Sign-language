@@ -1,6 +1,21 @@
+import { useState } from "react"
 import AppContainer from "../../hoc/AppContainer"
 
-function LoginPage() {
+
+
+const LoginPage = () => {
+
+    const [ credentials, setCredentials ] = useState({
+        username: "",
+    })
+
+    const onInputChange = event => {
+         setCredentials({
+             ...credentials,
+             [event.target.id]: event.target.value
+         })
+    }
+
     return (
         <AppContainer>
             <main className="LoginPage">
@@ -8,11 +23,8 @@ function LoginPage() {
                     <h1>Login to Translate Sign Language</h1>
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">Username</label>
-                        <input id="username" type="text" placeholder="Enter username" className="form-control" />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="password" className="form-label">Password</label>
-                        <input id="password" type="text" placeholder="Enter password" className="form-control" />
+                        <input id="username" type="text" placeholder="Enter username" 
+                        className="form-control" onChange={ onInputChange } />
                     </div>
                     <button type="submit" className="btn btn-primary btn-lg">Login</button>
                 </form>
