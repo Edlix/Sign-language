@@ -10,6 +10,8 @@ import LoginPage from './components/LoginPage/LoginPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import TranslationPage from './components/TranslationPage/TranslationPage';
 
+//USE THIS API:
+//https://vue-questionaire.herokuapp.com/translations
 function App() {
   return (
     <BrowserRouter>
