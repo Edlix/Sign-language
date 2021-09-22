@@ -4,13 +4,13 @@ import { useDispatch } from "react-redux"
 import { loginAttemptAction } from "../../store/actions/loginActions"
 
 
-
 const LoginPage = () => {
     
     const dispatch = useDispatch()
 
     const [ credentials, setCredentials ] = useState({
         username: "",
+        translations: []
     })
 
     const onInputChange = event => {
