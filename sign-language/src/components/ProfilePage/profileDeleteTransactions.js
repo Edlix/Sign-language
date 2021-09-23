@@ -6,17 +6,17 @@ const ProfileDeleteTransactions = () => {
       //  alert("Deleted transactions")
     //}
 
-    const test = async () => {
-        //let a = await ProfilePageAPI.getUserTransactions("dewaldels")
-        await ProfilePageAPI.deleteUserTransactions(1)
-        console.log(a)
+    const deleteTransactions = async () => {
+        let response = await ProfilePageAPI.getUserTransactions("dewaldels")
+        let userId = response[0].id
+        await ProfilePageAPI.deleteUserTransactions(userId)
     }
 
 
 
     return (
         <>
-            <button onClick={test}>Delete transactions</button>
+            <button onClick={deleteTransactions}>Delete transactions</button>
         </>
     )
 }
