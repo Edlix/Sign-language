@@ -7,7 +7,8 @@ const ProfileDeleteTransactions = () => {
     //}
 
     const test = async () => {
-        let a = await ProfilePageAPI.getUserTransactions("dewaldels")
+        //let a = await ProfilePageAPI.getUserTransactions("dewaldels")
+        await ProfilePageAPI.deleteUserTransactions(1)
         console.log(a)
     }
 
