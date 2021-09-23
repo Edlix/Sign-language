@@ -1,16 +1,29 @@
-import { ACTION_LOGIN_ATTEMPTING, ACTION_LOGIN_SUCCESS } from "../actions/loginActions"
+import { LoginAPI } from "../../components/LoginPage/LoginAPI"
+import { ACTION_LOGIN_CHECKFORUSER, loginCheckForUserAction, 
+    ACTION_LOGIN_USER, loginUserAction, 
+    ACTION_LOGIN_SELECTEDUSER, loginSelectedUser, loginSetUser } 
+     from "../actions/loginActions"
 
-export const loginMiddleware = ({ dispatch }) => next => action => {
+export const loginMiddleware = ({ dispatch }) => next => async action => {
     
     next(action)
-    if (action.type === ACTION_LOGIN_ATTEMPTING){
-        //make HTTP request
 
+    if (action.type === ACTION_LOGIN_CHECKFORUSER) {
+        const user = await LoginAPI.getSpecificUser(action.payload)
+        dispatch(loginSetUser(user))
     }
 
-    if(action.type === ACTION_LOGIN_SUCCESS){
-        // Loged inn -> route to translate
+    if(action.type === ACTION_LOGIN_SELECTEDUSER) {
+        LoginAPI.login(action.payload)
+        .then(username =>{
+            dispatch(loginSelectedUser(username))
+        })
     }
 
-
+    if(action.type === ACTION_LOGIN_USER) {
+        LoginAPI.login(action.payload)
+        .then(username =>{
+            dispatch(loginUserAction(username))
+        })
+    }
 }

@@ -21,6 +21,7 @@ function App() {
         <h1>React sign language</h1>
       </AppContainer>
       <Switch>
+        <Route path="/" exact component={LoginPage}/>
         <Route path="/login" exact component={LoginPage}/>
         <Route path="/translation" exact component={TranslationPage}/>
         <Route path="/profile" exact component={ProfilePage}/>
