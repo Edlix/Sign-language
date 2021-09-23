@@ -1,34 +1,48 @@
 import { useState } from "react"
 import AppContainer from "../../hoc/AppContainer"
-import { useDispatch } from "react-redux"
-import { loginAttemptAction } from "../../store/actions/loginActions"
+import { useDispatch, useSelector, } from "react-redux"
+import { loginCheckForUserAction, loginUserAction } from "../../store/actions/loginActions"
+import {useHistory} from "react-router-dom";
 
 
 const LoginPage = () => {
     
     const dispatch = useDispatch()
+    const user = useSelector(state => state.user)
+    const history = useHistory()
 
-    const [ credentials, setCredentials ] = useState({
+    const [username, setUsername] = useState({
         username: "",
+        userExists: false,
         translations: []
     })
 
     const onInputChange = event => {
-         setCredentials({
-             ...credentials,
-             [event.target.id]: event.target.value
-         })
+        setUsername(
+            event.target.value
+        )
     }
     const onFormSubmit = event => {
         event.preventDefault()
-        dispatch(loginAttemptAction(credentials))
+        dispatch(loginCheckForUserAction(username))
+        //console.log(username)
     }
+
+    // const onFormSubmit = event => {
+    //     event.preventDefault()
+    //     dispatch(loginUserAction(username))
+    //     history.push('/translation')
+    // }
 
     return (
         <AppContainer>
             <main className="LoginPage">
                 <form className="mt-3" onSubmit={ onFormSubmit}>
                     <h1>Login to Translate Sign Language</h1>
+                    {
+                        user &&
+                        <p>{user.username}</p>
+                    }
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">Username</label>
                         <input id="username" type="text" placeholder="Enter username" 
