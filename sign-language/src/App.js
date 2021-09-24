@@ -6,7 +6,7 @@ import {
   //Redirectx,
 }
 from "react-router-dom";
-import LoginPage from './components/LoginPage/LoginPage';
+import LoginPage from './components/LoginPage/loginPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import TranslationPage from './components/TranslationPage/TranslationPage';
 import AppContainer from './hoc/AppContainer';

@@ -45,7 +45,6 @@ const LoginPage = () => {
    
     return (
         <AppContainer>
-            <>
             <main className="LoginPage">
                 <form className="mt-3" onSubmit={ onFormSubmit}>
                     <h1>Login to Translate Sign Language</h1>
@@ -73,7 +72,6 @@ const LoginPage = () => {
 
                 </form>
             </main>
-        </>
         </AppContainer>
     )
 }
