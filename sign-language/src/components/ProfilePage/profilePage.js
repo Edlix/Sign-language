@@ -11,9 +11,9 @@ export const ProfilePage = () => {
     const state = useSelector(state => state)
     const [username, setUsername] = useState(state.loginReducer.username)
     useEffect(()=>{
-        if(username == ""){
-            history.push("/")
-        }
+        //if(username == ""){
+        //    history.push("/")
+        //}
     }, [])
     return (
         <>
