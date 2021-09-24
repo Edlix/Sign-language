@@ -24,10 +24,22 @@ const LoginPage = () => {
             [event.target.id]: event.target.value
         })
     }
+    const onInputChangeUser = event => {
+        setUser({
+            ...user,
+            [event.target.id]: event.target.value
+        })
+    }
      const  onFormSubmit = event => {
         event.preventDefault()
+        //dispatch(loginCheckForUserAction(user.username))
+        dispatch(loginUserAction(user))
+        history.push('/translation')
+    }
+    const  onFormSubmitE = event => {
+        event.preventDefault()
         dispatch(loginCheckForUserAction(user.username))
-       // dispatch(loginUserAction(user))
+        //dispatch(loginUserAction(user))
         history.push('/translation')
     }
    
@@ -48,7 +60,16 @@ const LoginPage = () => {
                         <input id="username" type="text" placeholder="Enter username" 
                         className="form-control" onChange={ onInputChange } />
                     </div>
-                    <button type="submit" className="btn btn-primary btn-lg">Login</button>
+                    <button type="submit" className="btn btn-primary btn-lg">Login new user</button>
+                </form>
+                <form className="mt-3 1" onSubmit={onFormSubmitE}>
+                <div className="mb-3">
+                        <label htmlFor="usernameNew" className="form-label">Existing user</label>
+                        <input id="username" type="text" placeholder="Enter your existing username" 
+                        className="form-control" onChange={ onInputChangeUser } />
+                    </div>
+                    <button type="submit1" className="btn1 btn-primary btn-lg">Login existing user</button>
+
                 </form>
             </main>
         </AppContainer>
