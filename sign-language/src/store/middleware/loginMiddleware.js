@@ -6,17 +6,13 @@ export const loginMiddleware = ({ dispatch }) => next => async action => {
     
     next(action)
 
+ 
     if (action.type === ACTION_LOGIN_CHECKFORUSER) {
-        const user = await LoginAPI.getSpecificUser(action.payload)
-        dispatch(loginSetUser(user))
+        LoginAPI.getSpecificUser(action.payload)
+        .then(username => {
+            dispatch(loginSetUser(username))
+        })
     }
-
-    // if(action.type === ACTION_LOGIN_SELECTEDUSER) {
-    //     LoginAPI.login(action.payload)
-    //     .then(username =>{
-    //         dispatch(loginSelectedUser(username))
-    //     })
-    // }
 
     if(action.type === ACTION_LOGIN_USER) {
         LoginAPI.login(action.payload)

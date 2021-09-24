@@ -20,10 +20,9 @@ export const LoginAPI = {
         })
     },
 
-    async getSpecificUser(username) {
+     getSpecificUser(username) {
         const apiURL = 'https://vue-questionaire.herokuapp.com/translations'
-        const user = await fetch(`${apiURL}?username=${username}`)
+        return fetch(`${apiURL}?username=${username}`)
         .then(response => response.json())
-        return user
     }
 }
