@@ -9,32 +9,25 @@ import { loginReducer } from "../../store/reducers/loginReducer";
 const LoginPage = () => {
     
     const dispatch = useDispatch()
-    const user = useSelector(state => state.user)
+    //const user = useSelector(state => state.user)
     const history = useHistory()
+    const usernames = useSelector(state => state.username)
 
-    const [username, setUsername] = useState({
+    const [user, setUser] = useState({
         username: "",
         translations: []
     })
 
-    // const onInputChange = event => {
-    //     console.log(event.target.value);
-    //     setUsername(
-    //         event.target.value
-    //     )
-    // }
-
     const onInputChange = event => {
-        console.log(event.target.value);
-        setUsername({
-            //...username,
+        setUser({
+            ...user,
             [event.target.id]: event.target.value
         })
     }
      const  onFormSubmit = event => {
         event.preventDefault()
-        dispatch(loginCheckForUserAction(username))
-        //dispatch(loginUserAction(username))
+        dispatch(loginCheckForUserAction(user.username))
+       // dispatch(loginUserAction(user))
         history.push('/translation')
     }
    
@@ -45,7 +38,10 @@ const LoginPage = () => {
                     <h1>Login to Translate Sign Language</h1>
                     {
                         user &&
-                        <p>{user.username}</p>
+                        <p>{user.username}</p>,
+                        usernames &&
+                        <p>{usernames.username}</p>
+
                     }
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">Username</label>

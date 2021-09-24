@@ -28,8 +28,8 @@ export const loginReducer = (state = initalState, action) => {
             }   
         case ACTION_LOGIN_SETUSER:
             return{
-            ...state,
-            user: action.payload
+                ...state,
+                username: action.payload
             }
         default:
             return state
