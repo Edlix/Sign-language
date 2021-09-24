@@ -3,8 +3,6 @@ from "../actions/loginActions"
 
 const initalState = {
     username: "",
-    translations: [],
-    userExists: false,
 }
 
 export const loginReducer = (state = initalState, action) => {
@@ -15,11 +13,9 @@ export const loginReducer = (state = initalState, action) => {
             return{
                 ...state,
                 username: action.payload,
-                translations: []
             }
             
         case ACTION_LOGIN_CHECKFORUSER:
-            console.log("Payload: ", action.payload)
             return{
                 ...state,
                 username: action.payload,
@@ -28,11 +24,13 @@ export const loginReducer = (state = initalState, action) => {
         case ACTION_LOGIN_SELECTEDUSER:
             return{
                 ...state,
-                userExists: true,
                 username: action.payload,
             }   
         case ACTION_LOGIN_SETUSER:
-            return action.payload
+            return{
+            ...state,
+            user: action.payload
+            }
         default:
             return state
     }
