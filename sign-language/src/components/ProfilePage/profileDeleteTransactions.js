@@ -7,9 +7,10 @@ const ProfileDeleteTransactions = () => {
     //}
 
     const deleteTransactions = async () => {
-        let response = await ProfilePageAPI.getUserTransactions("dewaldels")
-        let userId = response[0].id
-        await ProfilePageAPI.deleteUserTransactions(userId)
+        console.log()
+        //let response = await ProfilePageAPI.getUserTransactions("dewaldels")
+        //let userId = response[0].id
+        //await ProfilePageAPI.deleteUserTransactions(userId)
     }
 
 
