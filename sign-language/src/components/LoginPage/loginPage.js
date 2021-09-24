@@ -25,6 +25,7 @@ const LoginPage = () => {
     const onFormSubmit = event => {
         event.preventDefault()
         dispatch(loginCheckForUserAction(username))
+        history.push('/profile')
         //console.log(username)
     }
 

@@ -1,5 +1,5 @@
 export const ProfilePageAPI = {
-    getUserTransactions(username) {
+    getUserProfile(username) {
         const apiURL = 'https://vue-questionaire.herokuapp.com'
         return fetch(`${apiURL}/translations?username=${username}`, {
             method: 'GET',
@@ -15,7 +15,7 @@ export const ProfilePageAPI = {
     },
 
     //EdvardsAPIKEY
-    deleteUserTransactions(userId){
+    deleteUserTranslations(userId){
         const apiURL = 'https://vue-questionaire.herokuapp.com'
         fetch(`${apiURL}/translations/${userId}`, {
             method: 'PATCH', // NB: Set method to PATCH
