@@ -1,8 +1,6 @@
 import { LoginAPI } from "../../components/LoginPage/LoginAPI"
-import { ACTION_LOGIN_CHECKFORUSER, loginCheckForUserAction, 
-    ACTION_LOGIN_USER, loginUserAction, 
-    ACTION_LOGIN_SELECTEDUSER, loginSelectedUser, loginSetUser } 
-     from "../actions/loginActions"
+import { ACTION_LOGIN_CHECKFORUSER, ACTION_LOGIN_USER, 
+        loginUserAction, loginSetUser } from "../actions/loginActions"
 
 export const loginMiddleware = ({ dispatch }) => next => async action => {
     
@@ -13,12 +11,12 @@ export const loginMiddleware = ({ dispatch }) => next => async action => {
         dispatch(loginSetUser(user))
     }
 
-    if(action.type === ACTION_LOGIN_SELECTEDUSER) {
-        LoginAPI.login(action.payload)
-        .then(username =>{
-            dispatch(loginSelectedUser(username))
-        })
-    }
+    // if(action.type === ACTION_LOGIN_SELECTEDUSER) {
+    //     LoginAPI.login(action.payload)
+    //     .then(username =>{
+    //         dispatch(loginSelectedUser(username))
+    //     })
+    // }
 
     if(action.type === ACTION_LOGIN_USER) {
         LoginAPI.login(action.payload)

@@ -12,9 +12,9 @@ export const loginCheckForUserAction = username => ({
     type: ACTION_LOGIN_CHECKFORUSER,
     payload: username
 })
-export const loginSelectedUser = username => ({
+export const loginSelectedUser = user => ({
     type: ACTION_LOGIN_SELECTEDUSER,
-    payload: username
+    payload: user
 })
 
 export const loginSetUser = user => ({

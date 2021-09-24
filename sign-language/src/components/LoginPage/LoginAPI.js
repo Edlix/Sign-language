@@ -1,15 +1,15 @@
 export const LoginAPI = {
 
 
-    login(credentials) {
+   login(username) {
         const apiKey = 'EdvardsAPIKEY';
         return fetch ('https://vue-questionaire.herokuapp.com/translations', {
             method: 'POST',
             headers: {
                 'X-API-Key': apiKey,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(credentials)
+            body: JSON.stringify(username)
         })
         .then( async response => {
             if (!response.ok) {

@@ -3,6 +3,7 @@ import AppContainer from "../../hoc/AppContainer"
 import { useDispatch, useSelector, } from "react-redux"
 import { loginCheckForUserAction, loginUserAction } from "../../store/actions/loginActions"
 import {useHistory} from "react-router-dom";
+import { loginReducer } from "../../store/reducers/loginReducer";
 
 
 const LoginPage = () => {
@@ -13,27 +14,30 @@ const LoginPage = () => {
 
     const [username, setUsername] = useState({
         username: "",
-        userExists: false,
         translations: []
     })
 
-    const onInputChange = event => {
-        setUsername(
-            event.target.value
-        )
-    }
-    const onFormSubmit = event => {
-        event.preventDefault()
-        dispatch(loginCheckForUserAction(username))
-        //console.log(username)
-    }
-
-    // const onFormSubmit = event => {
-    //     event.preventDefault()
-    //     dispatch(loginUserAction(username))
-    //     history.push('/translation')
+    // const onInputChange = event => {
+    //     console.log(event.target.value);
+    //     setUsername(
+    //         event.target.value
+    //     )
     // }
 
+    const onInputChange = event => {
+        console.log(event.target.value);
+        setUsername({
+            //...username,
+            [event.target.id]: event.target.value
+        })
+    }
+     const  onFormSubmit = event => {
+        event.preventDefault()
+        dispatch(loginCheckForUserAction(username))
+        //dispatch(loginUserAction(username))
+        history.push('/translation')
+    }
+   
     return (
         <AppContainer>
             <main className="LoginPage">
