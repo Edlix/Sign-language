@@ -7,11 +7,10 @@ import {
 }
 from "react-router-dom";
 import LoginPage from './components/LoginPage/loginPage';
-import ProfilePage from './components/ProfilePage/ProfilePage';
-import TranslationPage from './components/TranslationPage/TranslationPage';
 import ProfilePage from './components/ProfilePage/profilePage';
 import TranslationPage from './components/TranslationPage/translationPage';
 import AppContainer from './hoc/AppContainer';
+import Navbar from './components/Navbar'
 
 //USE THIS API:
 //https://vue-questionaire.herokuapp.com/translationsx
@@ -19,9 +18,6 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <AppContainer> 
-        <h1>React sign language</h1>
-      </AppContainer>
       <Switch>
         <Route path="/" exact component={LoginPage}/>
         <Route path="/login" exact component={LoginPage}/>

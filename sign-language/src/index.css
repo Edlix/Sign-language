@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  height: 30px;
+}
+
+
+.navbarbutton{
+  float: right;
+}

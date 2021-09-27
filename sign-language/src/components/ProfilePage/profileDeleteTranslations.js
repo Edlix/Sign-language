@@ -1,12 +1,14 @@
 import {ProfilePageAPI} from "./profilePageAPI";
 import {useHistory} from "react-router-dom";
 
-const ProfileDeleteTranslations = () => {
+const ProfileDeleteTranslations = (username) => {
 
     const history = useHistory()
     const deleteTranslations = async () => {
-        let response = await ProfilePageAPI.getUserProfile("dewaldels")
+        console.log(username.username)
+        let response = await ProfilePageAPI.getUserProfile(username.username)
         let userId = response[0].id
+        console.log(userId + "___")
         await ProfilePageAPI.deleteUserTranslations(userId)
         alert("Deleted Translations")
         history.push("/translations")
