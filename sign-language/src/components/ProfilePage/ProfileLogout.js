@@ -8,6 +8,8 @@ const ProfileLogout = () => {
 
     const dispatch = useDispatch()
     const history = useHistory()
+
+    //Logs out by setting the username of state to null
     const logout = () => {
         dispatch(loginCheckForUserAction(null))
         history.push('/')

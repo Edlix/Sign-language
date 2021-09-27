@@ -1,4 +1,6 @@
 export const ProfilePageAPI = {
+
+    //Get user by username
     getUserProfile(username) {
         const apiURL = 'https://vue-questionaire.herokuapp.com'
         return fetch(`${apiURL}/translations?username=${username}`, {
@@ -14,7 +16,7 @@ export const ProfilePageAPI = {
         })
     },
 
-    //EdvardsAPIKEY
+    //Set user translations to empty array
     deleteUserTranslations(userId){
         const apiURL = 'https://vue-questionaire.herokuapp.com'
         fetch(`${apiURL}/translations/${userId}`, {
