@@ -39,14 +39,14 @@ const LoginPage = () => {
         event.preventDefault()
         //dispatch(loginCheckForUserAction(user.username))
         dispatch(loginUserAction(user))
-        history.push('/profile')
+        history.push('/translation')
     }
     //This is the submit for the existing user
     const  onFormSubmitE = event => {
         event.preventDefault()
         dispatch(loginCheckForUserAction(user.username))
         //dispatch(loginUserAction(user))
-        history.push('/profile')
+        history.push('/translation')
     }
    
     return (
