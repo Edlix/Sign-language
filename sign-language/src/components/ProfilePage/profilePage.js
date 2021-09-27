@@ -1,6 +1,6 @@
-import ProfileTranslations from "./profileTranslations";
-import ProfileLogout from "./profileLogout";
-import ProfileDeleteTranslations from "./profileDeleteTranslations";
+import ProfileTranslations from "./ProfileTranslations";
+import ProfileLogout from "./ProfileLogout";
+import ProfileDeleteTranslations from "./ProfileDeleteTranslations";
 import {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import {useSelector} from "react-redux";

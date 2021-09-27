@@ -1,4 +1,4 @@
-import {ProfilePageAPI} from "./profilePageAPI";
+import {ProfilePageAPI} from "./ProfilePageAPI";
 import {useHistory} from "react-router-dom";
 
 const ProfileDeleteTranslations = () => {

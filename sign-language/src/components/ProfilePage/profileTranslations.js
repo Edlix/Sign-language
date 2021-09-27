@@ -1,4 +1,4 @@
-import {ProfilePageAPI} from "./profilePageAPI";
+import {ProfilePageAPI} from "./ProfilePageAPI";
 import {useEffect, useState} from "react";
 
 
