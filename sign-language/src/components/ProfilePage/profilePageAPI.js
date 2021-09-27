@@ -14,7 +14,6 @@ export const ProfilePageAPI = {
         })
     },
 
-    //EdvardsAPIKEY
     deleteUserTranslations(userId){
         const apiURL = 'https://vue-questionaire.herokuapp.com'
         fetch(`${apiURL}/translations/${userId}`, {

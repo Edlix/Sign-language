@@ -5,7 +5,6 @@ import {useEffect, useState} from "react";
 const ProfileTranslations = () => {
 
     const [translations, setTranslations] = useState([])
-    //TODO use real transactions
     const getTranslations = async () => {
         console.log()
         let response = await ProfilePageAPI.getUserProfile("dewaldels")
@@ -13,14 +12,6 @@ const ProfileTranslations = () => {
         setTranslations(t)
     }
 
-    //let translations = getTranslations()
-
-    //let translations = ["a", "t"]
-
-    useEffect(()=>{
-        getTranslations()
-    }, [])
-    let transactions = ["aaa", "bbb", "ccc", "ddd", "eee","bdsf", "asfg", "werwer", "ddgdsd", "ggds","aaan", "bbbsdf", "ccret", "ddwtd", "eewe"]
     return (
         <>
             <h4>Check your translations</h4>
