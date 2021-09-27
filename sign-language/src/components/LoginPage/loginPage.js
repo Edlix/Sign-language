@@ -14,29 +14,34 @@ const LoginPage = () => {
     const history = useHistory()
     const usernames = useSelector(state => state.username)
 
+    //UseState
     const [user, setUser] = useState({
         username: "",
         translations: []
     })
-
+    
+    // This is the event change for new user
     const onInputChange = event => {
         setUser({
             ...user,
             [event.target.id]: event.target.value
         })
     }
+    //This is the event change for existing user
     const onInputChangeUser = event => {
         setUser({
             ...user,
             [event.target.id]: event.target.value
         })
     }
+    //This is the submit for the new user
      const  onFormSubmit = event => {
         event.preventDefault()
         //dispatch(loginCheckForUserAction(user.username))
         dispatch(loginUserAction(user))
         history.push('/profile')
     }
+    //This is the submit for the existing user
     const  onFormSubmitE = event => {
         event.preventDefault()
         dispatch(loginCheckForUserAction(user.username))

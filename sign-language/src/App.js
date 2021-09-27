@@ -6,11 +6,9 @@ import {
   //Redirectx,
 }
 from "react-router-dom";
-import LoginPage from './components/LoginPage/loginPage';
-import ProfilePage from './components/ProfilePage/profilePage';
-import TranslationPage from './components/TranslationPage/translationPage';
-import AppContainer from './hoc/AppContainer';
-import Navbar from './components/Navbar'
+import LoginPage from './components/LoginPage/LoginPage';
+import ProfilePage from './components/ProfilePage/ProfilePage';
+import TranslationPage from './components/TranslationPage/TranslationPage';
 
 //USE THIS API:
 //https://vue-questionaire.herokuapp.com/translationsx
