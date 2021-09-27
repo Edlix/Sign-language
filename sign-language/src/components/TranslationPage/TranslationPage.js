@@ -1,14 +1,14 @@
 
-import TranslationForm from "./translationForm";
+import TranslationForm from "./TranslationForm";
 
+
+//simple translationPage component.
 function TranslationPage() {
 
     console.log('Translationpage.render')
-
-
     return (
         <main className="TranslationPage">
-            <h2>Translatooor for Sign Language</h2>
+            <h2> Sign Language</h2>
             <TranslationForm />
         </main>
     )

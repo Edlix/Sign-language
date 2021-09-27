@@ -1,4 +1,4 @@
-export const TranslationApi = {
+export const TranslationAPI = {
     getUserProfile(username) {
         const apiURL = 'https://vue-questionaire.herokuapp.com'
         return fetch(`${apiURL}/translations?username=${username}`, {
