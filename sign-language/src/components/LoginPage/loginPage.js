@@ -50,7 +50,7 @@ const LoginPage = () => {
                     <h1>Login to Translate Sign Language</h1>
                     {
                         user &&
-                        <p>{user.username}</p>,
+                        <p>{user.username}</p>&&
                         usernames &&
                         <p>{usernames.username}</p>
 
