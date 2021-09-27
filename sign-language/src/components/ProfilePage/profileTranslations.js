@@ -5,6 +5,8 @@ import {useEffect, useState} from "react";
 const ProfileTranslations = () => {
 
     const [translations, setTranslations] = useState([])
+
+    //get 10 latest translations
     const getTranslations = async () => {
         console.log()
         let response = await ProfilePageAPI.getUserProfile("dewaldels")
