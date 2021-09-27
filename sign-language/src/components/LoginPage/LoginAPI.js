@@ -1,6 +1,6 @@
 export const LoginAPI = {
 
-
+    //Post api for creating a new user with username.
    login(username) {
         const apiKey = 'EdvardsAPIKEY';
         return fetch ('https://vue-questionaire.herokuapp.com/translations', {
@@ -19,11 +19,11 @@ export const LoginAPI = {
             return response.json()
         })
     },
-
-    async getSpecificUser(username) {
+    
+    //Fethces specific user based on username
+     getSpecificUser(username) {
         const apiURL = 'https://vue-questionaire.herokuapp.com/translations'
-        const user = await fetch(`${apiURL}?username=${username}`)
+        return fetch(`${apiURL}?username=${username}`)
         .then(response => response.json())
-        return user
     }
 }

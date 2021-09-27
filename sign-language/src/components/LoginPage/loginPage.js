@@ -9,32 +9,42 @@ import { loginReducer } from "../../store/reducers/loginReducer";
 const LoginPage = () => {
     
     const dispatch = useDispatch()
-    const user = useSelector(state => state.user)
+    //const user = useSelector(state => state.user)
     const history = useHistory()
+    const usernames = useSelector(state => state.username)
 
-    const [username, setUsername] = useState({
+    //UseState
+    const [user, setUser] = useState({
         username: "",
         translations: []
     })
-
-    // const onInputChange = event => {
-    //     console.log(event.target.value);
-    //     setUsername(
-    //         event.target.value
-    //     )
-    // }
-
+    
+    // This is the event change for new user
     const onInputChange = event => {
-        console.log(event.target.value);
-        setUsername({
-            //...username,
+        setUser({
+            ...user,
             [event.target.id]: event.target.value
         })
     }
+    //This is the event change for existing user
+    const onInputChangeUser = event => {
+        setUser({
+            ...user,
+            [event.target.id]: event.target.value
+        })
+    }
+    //This is the submit for the new user
      const  onFormSubmit = event => {
         event.preventDefault()
-        dispatch(loginCheckForUserAction(username))
-        //dispatch(loginUserAction(username))
+        //dispatch(loginCheckForUserAction(user.username))
+        dispatch(loginUserAction(user))
+        history.push('/translation')
+    }
+    //This is the submit for the existing user
+    const  onFormSubmitE = event => {
+        event.preventDefault()
+        dispatch(loginCheckForUserAction(user.username))
+        //dispatch(loginUserAction(user))
         history.push('/translation')
     }
    
@@ -45,14 +55,26 @@ const LoginPage = () => {
                     <h1>Login to Translate Sign Language</h1>
                     {
                         user &&
-                        <p>{user.username}</p>
+                        <p>{user.username}</p>&&
+                        usernames &&
+                        <p>{usernames.username}</p>
+
                     }
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">Username</label>
                         <input id="username" type="text" placeholder="Enter username" 
                         className="form-control" onChange={ onInputChange } />
                     </div>
-                    <button type="submit" className="btn btn-primary btn-lg">Login</button>
+                    <button type="submit" className="btn btn-primary btn-lg">Login new user</button>
+                </form>
+                <form className="mt-3 1" onSubmit={onFormSubmitE}>
+                <div className="mb-3">
+                        <label htmlFor="usernameNew" className="form-label">Existing user</label>
+                        <input id="username" type="text" placeholder="Enter your existing username" 
+                        className="form-control" onChange={ onInputChangeUser } />
+                    </div>
+                    <button type="submit1" className="btn1 btn-primary btn-lg">Login existing user</button>
+
                 </form>
             </main>
         </AppContainer>
