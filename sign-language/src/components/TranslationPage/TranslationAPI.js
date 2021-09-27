@@ -10,7 +10,7 @@ export const TranslationAPI = {
             if (!response.ok) {
                 throw new Error("request error")
             }
-            return response.json()
+            return response.json();
         })
     },
 
