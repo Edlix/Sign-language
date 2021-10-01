@@ -10,4 +10,4 @@ https://opentdb.com/api_config.php database for the translations.
 https://vue-questionaire.herokuapp.com/translation for the user information
 Link to app deployment:
 
-https://vast-caverns-44011.herokuapp.com/
+https://edli-sign-language.herokuapp.com/
